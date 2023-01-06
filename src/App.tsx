@@ -1,35 +1,17 @@
 import './App.css';
-import Greet from './components/Greet';
-import Person from './components/Person';
-import PersonList from './components/PersonList';
+import Button from './components/Button';
+import Input from './components/Input';
 
 function App() {
-  const personName = {
-    first: 'Bruce',
-    last: 'Wayne',
-  }
-
-  const nameList = [
-    {
-      first: 'Bruce' ,
-      last: 'Wayne',
-    },
-    {
-      first: 'Clark',
-      last: 'Kent',
-    },
-    {
-      first: 'Lex',
-      last: 'Luthor',
-    }
-  ]
-
 
   return (
     <div className="App">
-      <Greet name='ram' messageCount={11} isLoggedIn={false} />
-      <Person name={personName} />
-      <PersonList names={nameList} />
+      <Button 
+        handleClick={(event, id) => {
+          console.log('button click', event, id)
+        }}  
+      />
+      <Input value="" handleChange={(event) => console.log(event)} />
     </div>
   )
 }
